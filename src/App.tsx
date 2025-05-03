@@ -105,12 +105,14 @@ function ComponentsTable() {
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <p className="mb-2">{component.description}</p>
-                          <p>
-                            Add to your project:
-                            <code className="rounded-sm bg-gray-100 px-2 py-1 font-mono text-xs">
+                          <div className="flex items-center gap-2">
+                            <p>
+                              Add to project:
+                            </p>
+                            <code className="rounded-sm bg-gray-900 text-white px-2 py-1 font-mono text-xs">
                               alloy add {component.name}
                             </code>
-                          </p>
+                          </div>
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <div className="space-y-2">
