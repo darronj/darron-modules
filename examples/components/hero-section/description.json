@@ -2,15 +2,24 @@
   "name": "hero-section",
   "version": "1.0.0",
   "description": "A hero section with image, title, and CTA buttons",
-  "author": "Intermark",
+  "author": "Sarah Johnson",
+  "publishDate": "2024-03-15",
   "category": "Page Sections",
-  "tags": ["ui", "hero", "landing page"],
+  "tags": [
+    "ui",
+    "hero",
+    "landing page"
+  ],
   "thumbnail": "https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=800",
   "dependencies": {
     "react": "^18.0.0",
     "sanity": "^3.0.0"
   },
-  "variants": ["simple", "with-image", "video-background"],
+  "variants": [
+    "simple",
+    "with-image",
+    "video-background"
+  ],
   "files": [
     {
       "path": "component.tsx",

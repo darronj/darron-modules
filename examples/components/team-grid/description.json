@@ -2,15 +2,26 @@
   "name": "team-grid",
   "version": "1.0.0",
   "description": "A responsive grid layout for team members with social links",
-  "author": "Intermark",
+  "author": "Alex Rodriguez",
+  "publishDate": "2024-03-25",
   "category": "Page Sections",
-  "tags": ["ui", "team", "about"],
+  "tags": [
+    "ui",
+    "team",
+    "grid",
+    "social"
+  ],
   "thumbnail": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
   "dependencies": {
     "react": "^18.0.0",
-    "sanity": "^3.0.0"
+    "sanity": "^3.0.0",
+    "lucide-react": "^0.300.0"
   },
-  "variants": ["grid", "list", "carousel"],
+  "variants": [
+    "grid",
+    "list",
+    "carousel"
+  ],
   "files": [
     {
       "path": "component.tsx",

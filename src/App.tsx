@@ -1,61 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Package, ArrowRight, Terminal } from 'lucide-react';
+import { ArrowRight, Package, Terminal } from 'lucide-react';
+import { useState } from 'react';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Sitemap from './Sitemap';
+import { components } from './components/manifest';
+import ComponentDetail from './pages/ComponentDetail';
 
 function ComponentsTable() {
-  const components = [
-    {
-      name: 'Hero Section',
-      description: 'A hero section with image, title, and CTA buttons',
-      thumbnail: 'https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=800',
-      dependencies: {
-        npm: ['react@^18.0.0', 'sanity@^3.0.0'],
-        components: []
-      },
-      variants: ['simple', 'with-image', 'video-background'],
-      cliCommand: 'alloy add hero-section'
-    },
-    {
-      name: 'Pricing Table',
-      description: 'A responsive pricing table with multiple tiers and feature comparison',
-      thumbnail: 'https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=800',
-      dependencies: {
-        npm: ['react@^18.0.0', 'sanity@^3.0.0', 'lucide-react'],
-        components: []
-      },
-      variants: ['simple', 'with-toggle', 'comparison'],
-      cliCommand: 'alloy add pricing-table'
-    },
-    {
-      name: 'Team Grid',
-      description: 'A responsive grid layout for team members with social links',
-      thumbnail: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-      dependencies: {
-        npm: ['react@^18.0.0', 'sanity@^3.0.0', 'lucide-react'],
-        components: []
-      },
-      variants: ['grid', 'list', 'carousel'],
-      cliCommand: 'alloy add team-grid'
-    },
-    {
-      name: 'Page Builder',
-      description: 'A flexible page builder component for creating dynamic layouts',
-      thumbnail: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      dependencies: {
-        npm: ['react@^18.0.0', 'sanity@^3.0.0'],
-        components: [
-          'Hero Section',
-          'Text with Image',
-          'Testimonials List',
-          'CTA Section',
-          'Features Grid'
-        ]
-      },
-      variants: [],
-      cliCommand: 'alloy add page-builder'
-    }
-  ];
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Convert the components object into an array
+  const componentList = Object.entries(components).map(([name, data]) => ({
+    ...data,
+    name
+  }));
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl font-bold text-gray-900">Error loading components</h1>
+          <p className="mt-2 text-red-600">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -67,8 +36,8 @@ function ComponentsTable() {
               Browse our collection of reusable modules and their dependencies
             </p>
           </div>
-          <Link 
-            to="/sitemap" 
+          <Link
+            to="/sitemap"
             className="flex items-center gap-2 text-primary-600 hover:text-primary-700"
           >
             View Sitemap
@@ -114,50 +83,43 @@ function ComponentsTable() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-                    {components.map((component) => (
+                    {componentList.map((component) => (
                       <tr key={component.name}>
                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                          <div className="flex items-center gap-2">
+                          <Link
+                            to={`/components/${component.name}`}
+                            className="flex items-center gap-2 hover:text-primary-600"
+                          >
                             <Package className="h-4 w-4 text-gray-400" />
                             {component.name}
-                          </div>
+                          </Link>
                         </td>
                         <td className="px-3 py-4">
-                          <img 
-                            src={component.thumbnail} 
-                            alt={`${component.name} preview`}
-                            className="h-20 w-32 object-cover rounded-md"
-                          />
+                          <Link to={`/components/${component.name}`}>
+                            <img
+                              src={component.thumbnail}
+                              alt={`${component.name} preview`}
+                              className="h-20 w-32 object-cover rounded-md hover:opacity-90 transition-opacity"
+                            />
+                          </Link>
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <p className="mb-2">{component.description}</p>
                           <p>Add to your project:
                             <code className="bg-gray-100 px-2 py-1 rounded-sm text-xs font-mono">
-                              {component.cliCommand}
+                              alloy add {component.name}
                             </code>
                           </p>
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <div className="space-y-2">
-                            {component.dependencies.npm.length > 0 && (
+                            {Object.entries(component.dependencies).length > 0 && (
                               <div>
                                 <p className="font-medium text-gray-900">NPM:</p>
                                 <ul className="mt-1 space-y-1">
-                                  {component.dependencies.npm.map((dep) => (
-                                    <li key={dep} className="font-mono text-xs">
-                                      {dep}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            {component.dependencies.components.length > 0 && (
-                              <div>
-                                <p className="font-medium text-gray-900">Components:</p>
-                                <ul className="mt-1 space-y-1">
-                                  {component.dependencies.components.map((dep) => (
-                                    <li key={dep} className="text-xs">
-                                      {dep}
+                                  {Object.entries(component.dependencies).map(([name, version]) => (
+                                    <li key={name} className="font-mono text-xs">
+                                      {name}@{version}
                                     </li>
                                   ))}
                                 </ul>
@@ -197,6 +159,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ComponentsTable />} />
         <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/components/:componentId" element={<ComponentDetail />} />
       </Routes>
     </Router>
   );
