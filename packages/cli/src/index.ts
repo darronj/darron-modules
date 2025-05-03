@@ -50,11 +50,11 @@ program
 // Run the program
 async function main() {
   console.log(chalk.bold(`🛠️  ${chalk.blue('Alloy')} CLI v${packageJson.version}\n`));
-  
+
   try {
     // Check for updates
     await checkForUpdates();
-    
+
     // Parse command line arguments
     await program.parseAsync(process.argv);
   } catch (error) {

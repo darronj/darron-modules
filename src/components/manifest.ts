@@ -22,5 +22,5 @@ export interface ComponentData {
 export const components: Record<string, ComponentData> = {
   'hero-section': heroSection,
   'pricing-table': pricingTable,
-  'team-grid': teamGrid
-}; 
+  'team-grid': teamGrid,
+};

@@ -5,22 +5,14 @@
   "author": "Michael Chen",
   "publishDate": "2024-03-20",
   "category": "Page Sections",
-  "tags": [
-    "ui",
-    "pricing",
-    "comparison"
-  ],
+  "tags": ["ui", "pricing", "comparison"],
   "thumbnail": "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=800",
   "dependencies": {
     "react": "^18.0.0",
     "sanity": "^3.0.0",
     "lucide-react": "^0.300.0"
   },
-  "variants": [
-    "simple",
-    "with-toggle",
-    "comparison"
-  ],
+  "variants": ["simple", "with-toggle", "comparison"],
   "files": [
     {
       "path": "component.tsx",

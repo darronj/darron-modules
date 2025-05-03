@@ -7,21 +7,21 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'subtitle',
       title: 'Subtitle',
       type: 'text',
-      rows: 2
+      rows: 2,
     },
     {
       name: 'backgroundImage',
       title: 'Background Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'buttons',
@@ -35,34 +35,34 @@ export default {
               name: 'label',
               title: 'Label',
               type: 'string',
-              validation: Rule => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'url',
               title: 'URL',
               type: 'url',
-              validation: Rule => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'isPrimary',
               title: 'Is Primary',
               type: 'boolean',
-              initialValue: false
-            }
+              initialValue: false,
+            },
           ],
           preview: {
             select: {
-              title: 'label'
-            }
-          }
-        }
-      ]
-    }
+              title: 'label',
+            },
+          },
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       title: 'title',
-      media: 'backgroundImage'
-    }
-  }
+      media: 'backgroundImage',
+    },
+  },
 };

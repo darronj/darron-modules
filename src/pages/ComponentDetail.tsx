@@ -23,10 +23,7 @@ export default function ComponentDetail() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700 mb-4"
-          >
+          <Link to="/" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-700 mb-4">
             <ArrowLeft className="h-4 w-4" />
             Back to Components
           </Link>
@@ -51,11 +48,13 @@ export default function ComponentDetail() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
-                  <span>{new Date(component.publishDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}</span>
+                  <span>
+                    {new Date(component.publishDate).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
                 </div>
                 <a
                   href={componentGithubUrl}
@@ -87,7 +86,9 @@ export default function ComponentDetail() {
                     <h3 className="text-sm font-medium text-gray-900">NPM Packages</h3>
                     <ul className="mt-2 space-y-1">
                       {Object.entries(component.dependencies).map(([name, version]) => (
-                        <li key={name} className="text-sm text-gray-600 font-mono">{name}@{version}</li>
+                        <li key={name} className="text-sm text-gray-600 font-mono">
+                          {name}@{version}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -111,4 +112,4 @@ export default function ComponentDetail() {
       </div>
     </div>
   );
-} 
+}

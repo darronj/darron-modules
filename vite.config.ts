@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
     },
     // Ensure environment variables are exposed to the client
     define: {
-      'import.meta.env': env
-    }
+      'import.meta.env': env,
+    },
   };
 });

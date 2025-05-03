@@ -34,20 +34,16 @@ const socialIcons = {
 };
 
 export default function TeamGrid({
-  title = "Our Team",
-  description = "Meet the amazing people behind our success",
-  members
+  title = 'Our Team',
+  description = 'Meet the amazing people behind our success',
+  members,
 }: TeamGridProps) {
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            {title}
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            {description}
-          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{title}</h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
         </div>
         <ul
           role="list"
@@ -60,13 +56,9 @@ export default function TeamGrid({
                 src={urlForImage(member.image).width(800).url()}
                 alt={member.name}
               />
-              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">
-                {member.name}
-              </h3>
+              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{member.name}</h3>
               <p className="text-base leading-7 text-gray-600">{member.role}</p>
-              {member.bio && (
-                <p className="mt-4 text-sm leading-6 text-gray-600">{member.bio}</p>
-              )}
+              {member.bio && <p className="mt-4 text-sm leading-6 text-gray-600">{member.bio}</p>}
               {member.socialLinks && member.socialLinks.length > 0 && (
                 <ul role="list" className="mt-6 flex gap-x-6">
                   {member.socialLinks.map((link) => {

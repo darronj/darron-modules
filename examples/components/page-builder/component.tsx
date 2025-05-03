@@ -10,7 +10,7 @@ const componentMap = {
   textWithImage: TextWithImage,
   testimonialsList: TestimonialsList,
   ctaSection: CtaSection,
-  featuresGrid: FeaturesGrid
+  featuresGrid: FeaturesGrid,
 };
 
 export interface PageBuilderProps {
@@ -25,12 +25,12 @@ export default function PageBuilder({ content }: PageBuilderProps) {
     <>
       {content.map((section, index) => {
         const Component = componentMap[section._type];
-        
+
         if (!Component) {
           console.warn(`No component found for section type: ${section._type}`);
           return null;
         }
-        
+
         return <Component key={section._key || index} {...section} />;
       })}
     </>

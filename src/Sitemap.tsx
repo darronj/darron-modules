@@ -6,7 +6,7 @@ export default function Sitemap() {
     {
       path: '/',
       label: 'Home',
-      description: 'Landing page with hero section, pricing table, and team grid'
+      description: 'Landing page with hero section, pricing table, and team grid',
     },
     {
       path: '/components',
@@ -16,22 +16,22 @@ export default function Sitemap() {
           path: '/components/hero-section',
           label: 'Hero Section',
           apiRoute: '/api/components/hero-section',
-          variants: ['simple', 'with-image', 'video-background']
+          variants: ['simple', 'with-image', 'video-background'],
         },
         {
           path: '/components/pricing-table',
           label: 'Pricing Table',
           apiRoute: '/api/components/pricing-table',
-          variants: ['simple', 'with-toggle', 'comparison']
+          variants: ['simple', 'with-toggle', 'comparison'],
         },
         {
           path: '/components/team-grid',
           label: 'Team Grid',
           apiRoute: '/api/components/team-grid',
-          variants: ['grid', 'list', 'carousel']
-        }
-      ]
-    }
+          variants: ['grid', 'list', 'carousel'],
+        },
+      ],
+    },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Sitemap() {
             Back to Home
           </Link>
         </div>
-        
+
         <div className="space-y-8">
           {routes.map((route) => (
             <div key={route.path} className="bg-white shadow-sm rounded-lg p-6">
@@ -53,7 +53,7 @@ export default function Sitemap() {
                 </Link>
               </h2>
               <p className="text-gray-600 mt-1">{route.description}</p>
-              
+
               {route.children && (
                 <div className="mt-4 space-y-4">
                   {route.children.map((child) => (
@@ -63,7 +63,7 @@ export default function Sitemap() {
                           {child.label}
                         </Link>
                       </h3>
-                      
+
                       {child.apiRoute && (
                         <div className="mt-2">
                           <p className="text-sm text-gray-600 font-medium">API Endpoints:</p>
@@ -83,7 +83,7 @@ export default function Sitemap() {
                           </div>
                         </div>
                       )}
-                      
+
                       {child.variants && (
                         <div className="mt-3">
                           <p className="text-sm font-medium text-gray-600">Variants:</p>

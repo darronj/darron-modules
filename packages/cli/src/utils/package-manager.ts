@@ -5,7 +5,7 @@ type PackageManager = 'npm' | 'yarn' | 'pnpm';
 
 export async function detectPackageManager(): Promise<PackageManager> {
   const cwd = process.cwd();
-  
+
   // Check for lockfiles in order of preference
   try {
     await fs.access(path.join(cwd, 'pnpm-lock.yaml'));

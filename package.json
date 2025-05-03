@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "start": "vite preview"
+    "start": "vite preview",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\" --ignore-path .gitignore"
   },
   "dependencies": {
     "lucide-react": "^0.507.0",
+    "prettier": "^3.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.5.3"

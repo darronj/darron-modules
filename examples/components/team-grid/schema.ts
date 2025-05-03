@@ -7,13 +7,13 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
-      rows: 2
+      rows: 2,
     },
     {
       name: 'members',
@@ -27,28 +27,28 @@ export default {
               name: 'name',
               title: 'Name',
               type: 'string',
-              validation: Rule => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'role',
               title: 'Role',
               type: 'string',
-              validation: Rule => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'image',
               title: 'Image',
               type: 'image',
               options: {
-                hotspot: true
+                hotspot: true,
               },
-              validation: Rule => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'bio',
               title: 'Bio',
               type: 'text',
-              rows: 3
+              rows: 3,
             },
             {
               name: 'socialLinks',
@@ -66,31 +66,31 @@ export default {
                         list: [
                           { title: 'GitHub', value: 'github' },
                           { title: 'LinkedIn', value: 'linkedin' },
-                          { title: 'Twitter', value: 'twitter' }
-                        ]
+                          { title: 'Twitter', value: 'twitter' },
+                        ],
                       },
-                      validation: Rule => Rule.required()
+                      validation: (Rule) => Rule.required(),
                     },
                     {
                       name: 'url',
                       title: 'URL',
                       type: 'url',
-                      validation: Rule => Rule.required()
-                    }
+                      validation: (Rule) => Rule.required(),
+                    },
                   ],
                   preview: {
                     select: {
                       title: 'platform',
-                      subtitle: 'url'
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        }
+                      subtitle: 'url',
+                    },
+                  },
+                },
+              ],
+            },
+          ],
+        },
       ],
-      validation: Rule => Rule.required().min(1)
-    }
-  ]
+      validation: (Rule) => Rule.required().min(1),
+    },
+  ],
 };

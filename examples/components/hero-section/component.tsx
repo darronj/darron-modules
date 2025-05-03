@@ -23,45 +23,32 @@ export interface HeroSectionProps {
   buttons?: Button[];
 }
 
-export default function HeroSection({
-  title,
-  subtitle,
-  backgroundImage,
-  buttons = []
-}: HeroSectionProps) {
-  const backgroundImageUrl = backgroundImage 
-    ? urlForImage(backgroundImage).width(2000).url() 
-    : undefined;
+export default function HeroSection({ title, subtitle, backgroundImage, buttons = [] }: HeroSectionProps) {
+  const backgroundImageUrl = backgroundImage ? urlForImage(backgroundImage).width(2000).url() : undefined;
 
   return (
     <section className="relative bg-gray-900 text-white">
       {backgroundImageUrl && (
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${backgroundImageUrl})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.7
+            opacity: 0.7,
           }}
         />
       )}
-      
+
       <div className="relative z-10 px-4 py-32 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-          {title}
-        </h1>
-        
-        {subtitle && (
-          <p className="mt-6 max-w-2xl mx-auto text-xl">
-            {subtitle}
-          </p>
-        )}
-        
+        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">{title}</h1>
+
+        {subtitle && <p className="mt-6 max-w-2xl mx-auto text-xl">{subtitle}</p>}
+
         {buttons.length > 0 && (
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            {buttons.map(button => (
+            {buttons.map((button) => (
               <a
                 key={button._key}
                 href={button.url}

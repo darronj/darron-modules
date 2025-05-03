@@ -12,7 +12,7 @@ function ComponentsTable() {
   // Convert the components object into an array
   const componentList = Object.entries(components).map(([name, data]) => ({
     ...data,
-    name
+    name,
   }));
 
   if (error) {
@@ -32,14 +32,9 @@ function ComponentsTable() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Alloy Page Builder Modules</h1>
-            <p className="mt-2 text-gray-600">
-              Browse our collection of reusable modules and their dependencies
-            </p>
+            <p className="mt-2 text-gray-600">Browse our collection of reusable modules and their dependencies</p>
           </div>
-          <Link
-            to="/sitemap"
-            className="flex items-center gap-2 text-primary-600 hover:text-primary-700"
-          >
+          <Link to="/sitemap" className="flex items-center gap-2 text-primary-600 hover:text-primary-700">
             View Sitemap
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -52,7 +47,9 @@ function ComponentsTable() {
               <h2 className="text-base font-semibold text-gray-900">Getting Started</h2>
               <p className="mt-1 text-sm text-gray-500">Initialize Alloy in your project:</p>
               <div className="mt-2 bg-gray-900 rounded-md p-4">
-                <code className="text-sm text-gray-100 font-mono">npm install -g @intermark/alloy-cli && alloy init</code>
+                <code className="text-sm text-gray-100 font-mono">
+                  npm install -g @intermark/alloy-cli && alloy init
+                </code>
               </div>
             </div>
           </div>
@@ -65,7 +62,10 @@ function ComponentsTable() {
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                      <th
+                        scope="col"
+                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                      >
                         Component
                       </th>
                       <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
@@ -105,7 +105,8 @@ function ComponentsTable() {
                         </td>
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <p className="mb-2">{component.description}</p>
-                          <p>Add to your project:
+                          <p>
+                            Add to your project:
                             <code className="bg-gray-100 px-2 py-1 rounded-sm text-xs font-mono">
                               alloy add {component.name}
                             </code>

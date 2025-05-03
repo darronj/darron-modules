@@ -9,7 +9,7 @@ const ConfigSchema = z.object({
   registryUrl: z.string().url(),
   components: z.array(z.string()),
   componentVersions: z.record(z.string(), z.string()).optional(),
-  customizationOptions: z.record(z.string(), z.any()).optional()
+  customizationOptions: z.record(z.string(), z.any()).optional(),
 });
 
 type Config = z.infer<typeof ConfigSchema>;
@@ -17,11 +17,11 @@ type Config = z.infer<typeof ConfigSchema>;
 export async function getConfig(): Promise<Config | null> {
   try {
     const result = await explorerSync.search();
-    
+
     if (!result || result.isEmpty) {
       return null;
     }
-    
+
     return ConfigSchema.parse(result.config);
   } catch (error) {
     console.error('Error loading config:', error);
@@ -44,7 +44,7 @@ export async function updateConfig(updater: (config: Config) => Config): Promise
   if (!config) {
     throw new Error('No config found');
   }
-  
+
   const updatedConfig = updater(config);
   await saveConfig(updatedConfig);
 }

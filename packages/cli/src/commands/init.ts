@@ -24,7 +24,8 @@ export async function initCommand(options: InitOptions) {
   }
 
   // Detect if already initialized
-  const configExists = await fs.access(path.join(process.cwd(), '.alloyrc.json'))
+  const configExists = await fs
+    .access(path.join(process.cwd(), '.alloyrc.json'))
     .then(() => true)
     .catch(() => false);
 
@@ -36,10 +37,10 @@ export async function initCommand(options: InitOptions) {
           type: 'confirm',
           name: 'confirm',
           message: 'Do you want to reinitialize?',
-          default: false
-        }
+          default: false,
+        },
       ]);
-      
+
       if (!confirm) {
         return;
       }
@@ -55,30 +56,26 @@ export async function initCommand(options: InitOptions) {
         type: 'input',
         name: 'registryUrl',
         message: 'Component registry URL:',
-        default: registryUrl
+        default: registryUrl,
       },
       {
         type: 'confirm',
         name: 'installDependencies',
         message: 'Install base dependencies?',
-        default: true
-      }
+        default: true,
+      },
     ]);
-    
+
     registryUrl = answers.registryUrl;
-    
+
     if (answers.installDependencies) {
       const packageManager = await detectPackageManager();
-      
+
       // Install core dependencies
       console.log(chalk.cyan('\nInstalling core dependencies...'));
-      
+
       try {
-        await execa(packageManager, [
-          packageManager === 'npm' ? 'install' : 'add',
-          '@sanity/client',
-          'sanity'
-        ]);
+        await execa(packageManager, [packageManager === 'npm' ? 'install' : 'add', '@sanity/client', 'sanity']);
         console.log(chalk.green('Dependencies installed successfully!'));
       } catch (error) {
         console.error(chalk.red('Failed to install dependencies:'), error.message);
@@ -89,12 +86,11 @@ export async function initCommand(options: InitOptions) {
   // Create configuration file
   await createConfig({
     registryUrl,
-    components: []
+    components: [],
   });
 
   // Create base directory structure
-  await fs.mkdir(path.join(process.cwd(), 'alloy'), { recursive: true })
-    .catch(() => {});
+  await fs.mkdir(path.join(process.cwd(), 'alloy'), { recursive: true }).catch(() => {});
 
   console.log(chalk.green('\n✅ Alloy initialized successfully!'));
   console.log('\nNext steps:');

@@ -5,23 +5,14 @@
   "author": "Alex Rodriguez",
   "publishDate": "2024-03-25",
   "category": "Page Sections",
-  "tags": [
-    "ui",
-    "team",
-    "grid",
-    "social"
-  ],
+  "tags": ["ui", "team", "grid", "social"],
   "thumbnail": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
   "dependencies": {
     "react": "^18.0.0",
     "sanity": "^3.0.0",
     "lucide-react": "^0.300.0"
   },
-  "variants": [
-    "grid",
-    "list",
-    "carousel"
-  ],
+  "variants": ["grid", "list", "carousel"],
   "files": [
     {
       "path": "component.tsx",
