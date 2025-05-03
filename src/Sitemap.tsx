@@ -35,9 +35,9 @@ export default function Sitemap() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl">
+        <div className="mb-8 flex items-center justify-between">
           <h1 className="text-3xl font-bold text-gray-900">Sitemap</h1>
           <Link to="/" className="text-primary-600 hover:text-primary-700">
             Back to Home
@@ -46,18 +46,18 @@ export default function Sitemap() {
 
         <div className="space-y-8">
           {routes.map((route) => (
-            <div key={route.path} className="bg-white shadow-sm rounded-lg p-6">
+            <div key={route.path} className="rounded-lg bg-white p-6 shadow-sm">
               <h2 className="text-xl font-semibold text-gray-900">
                 <Link to={route.path} className="hover:text-primary-600">
                   {route.label}
                 </Link>
               </h2>
-              <p className="text-gray-600 mt-1">{route.description}</p>
+              <p className="mt-1 text-gray-600">{route.description}</p>
 
               {route.children && (
                 <div className="mt-4 space-y-4">
                   {route.children.map((child) => (
-                    <div key={child.path} className="pl-4 border-l-2 border-gray-200">
+                    <div key={child.path} className="border-l-2 border-gray-200 pl-4">
                       <h3 className="text-lg font-medium text-gray-900">
                         <Link to={child.path} className="hover:text-primary-600">
                           {child.label}
@@ -66,17 +66,17 @@ export default function Sitemap() {
 
                       {child.apiRoute && (
                         <div className="mt-2">
-                          <p className="text-sm text-gray-600 font-medium">API Endpoints:</p>
+                          <p className="text-sm font-medium text-gray-600">API Endpoints:</p>
                           <div className="mt-1 space-y-2">
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-medium text-gray-500">GET</span>
-                              <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
+                              <code className="rounded-sm bg-gray-100 px-2 py-1 font-mono text-sm">
                                 {child.apiRoute}
                               </code>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-medium text-gray-500">GET</span>
-                              <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
+                              <code className="rounded-sm bg-gray-100 px-2 py-1 font-mono text-sm">
                                 {child.apiRoute}/files
                               </code>
                             </div>
@@ -93,7 +93,7 @@ export default function Sitemap() {
                                 <span className="text-sm text-gray-600">{variant}</span>
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs font-medium text-gray-500">GET</span>
-                                  <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
+                                  <code className="rounded-sm bg-gray-100 px-2 py-1 font-mono text-sm">
                                     {child.apiRoute}/variants/{variant}
                                   </code>
                                 </div>

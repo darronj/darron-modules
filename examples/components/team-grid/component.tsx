@@ -56,7 +56,7 @@ export default function TeamGrid({
                 src={urlForImage(member.image).width(800).url()}
                 alt={member.name}
               />
-              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{member.name}</h3>
+              <h3 className="mt-6 text-lg leading-8 font-semibold text-gray-900">{member.name}</h3>
               <p className="text-base leading-7 text-gray-600">{member.role}</p>
               {member.bio && <p className="mt-4 text-sm leading-6 text-gray-600">{member.bio}</p>}
               {member.socialLinks && member.socialLinks.length > 0 && (

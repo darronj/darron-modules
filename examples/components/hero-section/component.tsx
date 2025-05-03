@@ -41,10 +41,10 @@ export default function HeroSection({ title, subtitle, backgroundImage, buttons 
         />
       )}
 
-      <div className="relative z-10 px-4 py-32 mx-auto max-w-7xl sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-4 py-32 text-center sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">{title}</h1>
 
-        {subtitle && <p className="mt-6 max-w-2xl mx-auto text-xl">{subtitle}</p>}
+        {subtitle && <p className="mx-auto mt-6 max-w-2xl text-xl">{subtitle}</p>}
 
         {buttons.length > 0 && (
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -52,10 +52,10 @@ export default function HeroSection({ title, subtitle, backgroundImage, buttons 
               <a
                 key={button._key}
                 href={button.url}
-                className={`px-6 py-3 text-base font-medium rounded-md shadow ${
+                className={`rounded-md px-6 py-3 text-base font-medium shadow ${
                   button.isPrimary
-                    ? 'bg-indigo-600 hover:bg-indigo-700 text-white'
-                    : 'bg-white hover:bg-gray-50 text-gray-900'
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                    : 'bg-white text-gray-900 hover:bg-gray-50'
                 }`}
               >
                 {button.label}
