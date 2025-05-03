@@ -1,0 +1,21 @@
+{
+  "name": "page-builder",
+  "version": "1.0.0",
+  "description": "A flexible page builder component for creating dynamic layouts",
+  "category": "layout",
+  "tags": ["builder", "layout", "dynamic"],
+  "files": [
+    {
+      "path": "component.tsx",
+      "type": "component"
+    },
+    {
+      "path": "schema.ts",
+      "type": "schema"
+    },
+    {
+      "path": "index.ts",
+      "type": "entry"
+    }
+  ]
+}

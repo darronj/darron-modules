@@ -1,0 +1,28 @@
+{
+  "name": "pricing-table",
+  "version": "1.0.0",
+  "description": "A responsive pricing table with multiple tiers and feature comparison",
+  "author": "Intermark",
+  "category": "Page Sections",
+  "tags": ["ui", "pricing", "commerce"],
+  "thumbnail": "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "dependencies": {
+    "react": "^18.0.0",
+    "sanity": "^3.0.0"
+  },
+  "variants": ["simple", "with-toggle", "comparison"],
+  "files": [
+    {
+      "path": "component.tsx",
+      "type": "component"
+    },
+    {
+      "path": "schema.ts",
+      "type": "schema"
+    },
+    {
+      "path": "index.ts",
+      "type": "entry"
+    }
+  ]
+}
