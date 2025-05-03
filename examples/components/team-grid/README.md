@@ -1,5 +1,7 @@
 # Team Grid Component
 
+![Team Grid Preview](https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800)
+
 A responsive grid component for displaying team members with their photos, roles, and social links.
 
 ## Overview

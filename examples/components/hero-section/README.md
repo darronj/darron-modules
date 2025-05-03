@@ -1,5 +1,7 @@
 # Hero Section Component
 
+![Hero Section Preview](https://images.pexels.com/photos/3473569/pexels-photo-3473569.jpeg?auto=compress&cs=tinysrgb&w=800)
+
 A modern, responsive hero section component for landing pages and marketing websites.
 
 ## Overview

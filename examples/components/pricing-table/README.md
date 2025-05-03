@@ -1,5 +1,7 @@
 # Pricing Table Component
 
+![Pricing Table Preview](https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=800)
+
 A flexible and customizable pricing table component for showcasing product plans and pricing tiers.
 
 ## Overview
