@@ -10,7 +10,7 @@ A collection of reusable Sanity.io components, schemas, and page builder modules
 - 🛠️ Customizable configuration
 - 📚 Built-in documentation
 
-## Installation
+<!-- ## Installation
 
 ```bash
 # Install the CLI globally
@@ -31,7 +31,7 @@ alloy add hero-section testimonials-grid blog-listing
 
 # Add a component with configuration
 alloy add contact-form --variant=simple
-```
+``` 
 
 ## Available Components
 
@@ -44,3 +44,4 @@ Visit our [documentation site](https://alloy.intermark.com) for detailed usage i
 ## License
 
 MIT © Intermark
+-->
