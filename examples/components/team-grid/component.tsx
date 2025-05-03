@@ -56,7 +56,7 @@ export default function TeamGrid({
           {members.map((member) => (
             <li key={member._key}>
               <img
-                className="aspect-[3/2] w-full rounded-2xl object-cover"
+                className="aspect-3/2 w-full rounded-2xl object-cover"
                 src={urlForImage(member.image).width(800).url()}
                 alt={member.name}
               />

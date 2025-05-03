@@ -76,9 +76,9 @@ function ComponentsTable() {
           </Link>
         </div>
 
-        <div className="bg-white shadow-sm ring-1 ring-gray-900/5 rounded-lg px-6 py-4 mb-8">
+        <div className="bg-white shadow-xs ring-1 ring-gray-900/5 rounded-lg px-6 py-4 mb-8">
           <div className="flex items-start gap-4">
-            <Terminal className="h-6 w-6 text-primary-600 flex-shrink-0 mt-1" />
+            <Terminal className="h-6 w-6 text-primary-600 shrink-0 mt-1" />
             <div>
               <h2 className="text-base font-semibold text-gray-900">Getting Started</h2>
               <p className="mt-1 text-sm text-gray-500">Initialize Alloy in your project:</p>
@@ -92,7 +92,7 @@ function ComponentsTable() {
         <div className="mt-8 flow-root">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-              <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg">
+              <div className="overflow-hidden shadow-sm ring-1 ring-black ring-opacity-5 rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
                     <tr>
@@ -132,7 +132,7 @@ function ComponentsTable() {
                         <td className="px-3 py-4 text-sm text-gray-500">
                           <p className="mb-2">{component.description}</p>
                           <p>Add to your project:
-                            <code className="bg-gray-100 px-2 py-1 rounded text-xs font-mono">
+                            <code className="bg-gray-100 px-2 py-1 rounded-sm text-xs font-mono">
                               {component.cliCommand}
                             </code>
                           </p>

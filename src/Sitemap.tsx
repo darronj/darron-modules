@@ -46,7 +46,7 @@ export default function Sitemap() {
         
         <div className="space-y-8">
           {routes.map((route) => (
-            <div key={route.path} className="bg-white shadow rounded-lg p-6">
+            <div key={route.path} className="bg-white shadow-sm rounded-lg p-6">
               <h2 className="text-xl font-semibold text-gray-900">
                 <Link to={route.path} className="hover:text-primary-600">
                   {route.label}
@@ -70,13 +70,13 @@ export default function Sitemap() {
                           <div className="mt-1 space-y-2">
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-medium text-gray-500">GET</span>
-                              <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">
+                              <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
                                 {child.apiRoute}
                               </code>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-medium text-gray-500">GET</span>
-                              <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">
+                              <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
                                 {child.apiRoute}/files
                               </code>
                             </div>
@@ -93,7 +93,7 @@ export default function Sitemap() {
                                 <span className="text-sm text-gray-600">{variant}</span>
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs font-medium text-gray-500">GET</span>
-                                  <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">
+                                  <code className="bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono">
                                     {child.apiRoute}/variants/{variant}
                                   </code>
                                 </div>
